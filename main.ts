@@ -9,7 +9,9 @@ function VariableInit () {
     "3ozVH7s4R",
     "CXw4iV-SR",
     "RLS84pPIg",
-    "wmA84pPIg"
+    "wmA84pPIg",
+    "tyn9HY8Sg",
+    "Wl7rNL8Sg"
     ]
 }
 input.onButtonPressed(Button.A, function () {
@@ -25,14 +27,19 @@ input.onButtonPressed(Button.AB, function () {
     control.reset()
 })
 let topic: string[] = []
-let GroupID = 1
+let topic_0 = ""
+let GroupID = 0
 VariableInit()
 basic.showNumber(0)
 let wifi_name = "izowifi"
 let password = "izo1234@"
 let iot_id = "E7ymbsEIg"
 let iot_pwd = "E7yixsPSRz"
-let topic_0 = topic[GroupID - 1]
+if (GroupID != 0) {
+    topic_0 = topic[GroupID - 1]
+} else {
+    topic_0 = "0000000000"
+}
 basic.showNumber(1)
 microIoT.microIoT_initDisplay()
 microIoT.microIoT_showUserText(0, "Group ID: " + GroupID)
@@ -47,8 +54,4 @@ iot_pwd,
 topic_0,
 microIoT.SERVERS.English
 )
-basic.showNumber(3)
-publish(5, convertToText(randint(0, 20)))
-publish(6, convertToText(randint(0, 20)))
-publish(7, convertToText(randint(0, 20)))
-basic.showNumber(4)
+basic.showIcon(IconNames.Yes)
