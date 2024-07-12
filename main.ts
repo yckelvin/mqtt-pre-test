@@ -14,7 +14,7 @@ function VariableInit () {
 }
 input.onButtonPressed(Button.A, function () {
     microIoT.microIoT_SendMessage(convertToText(pins.analogReadPin(AnalogPin.P0)), microIoT.TOPIC.topic_0)
-    microIoT.microIoT_initDisplay()
+    microIoT.microIoT_clear()
     microIoT.microIoT_showUserText(0, "Light value:" + convertToText(pins.analogReadPin(AnalogPin.P0)))
 })
 function publish (num: number, text: string) {
@@ -30,8 +30,8 @@ VariableInit()
 basic.showNumber(0)
 let wifi_name = "izowifi"
 let password = "izo1234@"
-let iot_id = "UxrkoGs4R"
-let iot_pwd = "Ux9koGy4Rz"
+let iot_id = "E7ymbsEIg"
+let iot_pwd = "E7yixsPSRz"
 let topic_0 = topic[GroupID - 1]
 basic.showNumber(1)
 microIoT.microIoT_initDisplay()
